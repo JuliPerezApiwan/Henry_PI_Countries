@@ -1,0 +1,44 @@
+const { DataTypes } = require('sequelize');
+// Exportamos una funcion que define el modelo
+// Luego le injectamos la conexion a sequelize.
+module.exports = (sequelize) => {
+  // defino el modelo
+  sequelize.define('activities', {
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true,
+    },
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+
+    dificult: {
+        type: DataTypes.ENUM('1', '2', '3', '4', '5'),
+        allowNull:false,
+    },
+
+    duration: {
+        type: DataTypes.INTEGER,
+        allowNull:false,
+    },
+    
+    station: {
+        type: DataTypes.ENUM('Verano', 'Otoño', 'Invierno', 'Primavera'),
+        allowNull:false,
+    },
+    ubication: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    }
+  });
+};
+
+/* -  ID. \*
+-  Nombre. \*
+-  Dificultad (número del 1 al 5). \*
+-  Duración (en horas).
+-  Temporada (Verano, Otoño, Invierno o Primavera). \* 
+*/

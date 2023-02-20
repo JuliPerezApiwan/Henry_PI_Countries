@@ -18,11 +18,18 @@
 //                       `=---='
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const server = require('./src/app.js');
-const { conn } = require('./src/db.js');
+const { sequelize } = require('./src/db.js');
+const { saveApiData } = require('./src/controllers/saveApiData')
 
 // Syncing all the models at once.
-conn.sync({ force: true }).then(() => {
+sequelize.sync({ force: true }).then( async () => {
+  console.log('DB conectada')
+  //console.log(await saveApiData());
+  await saveApiData();
+ 
   server.listen(3001, () => {
     console.log('%s listening at 3001'); // eslint-disable-line no-console
   });
+}).catch((error) => {
+  console.log(error);
 });
