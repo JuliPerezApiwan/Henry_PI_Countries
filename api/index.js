@@ -22,7 +22,7 @@ const { sequelize } = require('./src/db.js');
 const { saveApiData } = require('./src/controllers/saveApiData')
 
 // Syncing all the models at once.
-sequelize.sync({ force: true }).then( async () => {
+sequelize.sync({ force: false}).then( async () => {
   console.log('DB conectada')
   //console.log(await saveApiData());
   await saveApiData();

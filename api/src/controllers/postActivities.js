@@ -19,7 +19,7 @@ const postActivities = async (name, dificult, duration, station, ubication) => {
     
     const result = await country.findOne({
         where: {
-            id: newActivity.ubication // ingresa el codigo de 3 letras
+            name: newActivity.ubication 
         }
     })
     result.activity = newActivity;
@@ -30,7 +30,6 @@ const postActivities = async (name, dificult, duration, station, ubication) => {
     }
     }) 
 
-    // result.activity = newActivity;
     return result;
 }
 

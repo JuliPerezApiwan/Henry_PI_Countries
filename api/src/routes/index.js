@@ -20,7 +20,21 @@ router.get('/countries', async (req, res) => {
         res.status(400).json({error: error.message})
     }
 });
+router.get('/countries/name',  async (req, res) => {
 
+    const  { name } = req.query;
+
+    try {
+        
+            const response =  await getName(name);
+            return res.status(200).json(response)
+       
+
+        
+    } catch (error) {
+        res.status(404).json({error: error.message})
+    }
+})
 router.get('/countries/:id', async (req, res) => {
     const { id } = req.params;
     try{
@@ -39,6 +53,7 @@ router.get('/countries/:id', async (req, res) => {
           subregion: result.subregion,
           area: result.area,
           population: result.population,
+          activity: result.activity
       
       } 
         return res.status(200).json(findId);
@@ -51,21 +66,7 @@ router.get('/countries/:id', async (req, res) => {
   
   
 
-router.get(`/countries/name?={name}`,  async (req, res) => {
 
-    const  { name } = req.query;
-    if(!name) throw new Error('no tengo name')
-    try {
-        
-            const response =  await getName(name);
-            return res.status(200).json(response)
-       
-
-        
-    } catch (error) {
-        res.status(404).json({error: error.message})
-    }
-})
 
 router.post('/activities', async (req, res) => {
     const { name, dificult, duration, station, ubication } = req.body;
@@ -87,8 +88,7 @@ router.get('/activities', async (req, res) => {
         res.status(400).json({error: error.message})
     }
 })
-// Configurar los routers
-// Ejemplo: router.use('/auth', authRouter);
+
 
 
 module.exports = router;

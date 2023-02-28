@@ -16,18 +16,16 @@ module.exports = (sequelize) => {
     },
 
     dificult: {
-        type: DataTypes.ENUM('1', '2', '3', '4', '5'),
+        type: DataTypes.STRING,
         allowNull:false,
     },
 
     duration: {
         type: DataTypes.INTEGER,
-        allowNull:false,
     },
     
     station: {
-        type: DataTypes.ENUM('Verano', 'Otoño', 'Invierno', 'Primavera'),
-        allowNull:false,
+        type: DataTypes.STRING,
     },
     ubication: {
       type: DataTypes.STRING,

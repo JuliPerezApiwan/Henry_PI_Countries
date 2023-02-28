@@ -15,7 +15,7 @@ const getApidata = async () => {
                 name: res.name.common,
                 image: res.flags[1],
                 continent: res.continents[0],
-                capital: res.capital,
+                capital: res.capital ? res.capital[0] : null,
                 subregion: res.subregion,
                 area: res.area,
                 population: res.population,
