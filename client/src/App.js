@@ -13,7 +13,9 @@ function App() {
       <Route path='/landing' component={Landing} />
       <Route path='/countries' component={NavBar} />
       <Route path='/countries' component={Country} />
+      <Route path='/detail/:id' component={NavBar} />
       <Route path='/detail/:id' component={CountryDetail} />
+      
       <Route path='/form' component={Form} />
     </div>
   );

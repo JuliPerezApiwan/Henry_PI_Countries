@@ -2,6 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { getCountriesName } from '../../redux/actions';
+import style from '../search/search.module.css'
 
 
 
@@ -22,7 +23,7 @@ export default function SearchBar() {
     }
 
     return (
-      <div >
+      <div className={style.search}>
            <input className="input" value={name} type="text" placeholder="Search here..."
               onChange={handleInputChange}
            />

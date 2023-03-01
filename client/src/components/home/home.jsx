@@ -1,15 +1,14 @@
-import { Link } from "react-router-dom";
 import Country from "../country/country";
+import style from "../home/home.module.css"
 
 
 const Home = ()=>{
     return(
-        <>
-        <button>Form</button>
+        <div className={style.home}>
           <Country></Country>
           
           
-        </>
+       </div>
     )
 }
 

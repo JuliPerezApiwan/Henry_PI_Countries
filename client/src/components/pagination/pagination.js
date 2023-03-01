@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-// import styles from '../styles/Paginado.module.scss';
+import style from '../pagination/pagination.module.css'
 
 function Pagination ({currentPage, setCurrentPage, max}){
   const [input, setInput] = useState (1);
@@ -35,11 +35,10 @@ function Pagination ({currentPage, setCurrentPage, max}){
   };
 
   return (
-    <div >
-      <button disabled={currentPage <= 1} onClick={previousPage}/>
-        <input onChange={e => onChange (e)} onKeyDown={e => onKeyDown (e)} name="page" value={input} />
-      <p> of {max} </p>
-      <button onClick={nextPage} />
+    <div className={style.pagination}>
+      <button disabled={currentPage <= 1} onClick={previousPage}> Prev </button>
+        <input onChange={e => onChange (e)} onKeyDown={e => onKeyDown (e)} name="page" value={input} /> <p> of {max} </p>
+      <button onClick={nextPage}> Next </button> 
     </div>
   );
 };

@@ -4,6 +4,7 @@ import { useEffect, useState} from "react";
  import CountryCard  from '../countryCard/countryCard'
 import Pagination from "../pagination/pagination";
 import SearchBar from "../search/search";
+import style from '../country/country.module.css'
 
 
 export const Country = () => {
@@ -45,23 +46,23 @@ export const Country = () => {
     },[dispatch]);
   
     return (
-        <>
-        <SearchBar />
+        <div>
+      
         <Pagination currentPage={currentPage} setCurrentPage={setCurrentPage} max={max} />
 
-         <select onChange={handlerOrder} >
+         <select onChange={handlerOrder} className={style.filters}>
                     <option value="order">Order By Name</option>
                     <option value="A-Z">A-Z</option>
                     <option value="Z-A">Z-A</option>
                 </select>
 
-         <select onChange={handlerOrderbyPopulation} >
+         <select onChange={handlerOrderbyPopulation} className={style.filters}>
                     <option value="orderbypopulation" >Order By Population</option>
                     <option value="higher-population">Higher population</option>
                     <option value="lower-population">Lower population</option>
                 </select>
 
-                <select onChange={(e) => handlerFilterbyContinent(e)}>
+                <select onChange={(e) => handlerFilterbyContinent(e)} className={style.filters}>
                         <option value="filterbycontinent"  >Filter By Continent</option>
                         <option value='All' key='All' >All</option>
                         <option value='Africa' key='Africa' >Africa</option>
@@ -72,13 +73,13 @@ export const Country = () => {
                         <option value='Oceania' key='Oceania'>Oceania</option>
                         <option value='South America' key='SouthAmerica'>South America</option>
                     </select>
-                  <select onChange={handlerFilterbyActivity}>   
+                  <select onChange={handlerFilterbyActivity} className={style.filters}>   
                   <option value="filterbyactivity">Filter by Activities</option>
                   <option value='Buceo' key='Buceo'>Buceo</option>
                   <option value='Tracking' key='Tracking'>Tracking</option>
                         
                     </select>
-                  
+                  <div className={style.cards}>
     
          
          {
@@ -98,10 +99,10 @@ export const Country = () => {
 
               })
         }
-
+      </div>
       
             
-      </>
+      </div>
         
         
        

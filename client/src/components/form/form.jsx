@@ -2,6 +2,8 @@ import React from "react";
 import { useDispatch, useSelector, connect } from "react-redux";
 import { useState, useEffect } from "react";
 import { addActivity, getAllCountries } from "../../redux/actions";
+import style from '../form/form.module.css'
+import { Link } from "react-router-dom";
 
 
 
@@ -48,7 +50,11 @@ const Form = (props) => {
    
 
     return(
-        <form onSubmit={handleSubmit}>
+        
+        <form classname={style.form} onSubmit={handleSubmit}>
+            <Link to='/countries' className={style.btn_home}><button>Home</button></Link>
+            <div className={style.container}>
+            <h2>Add Activities Form</h2>
             <label>Name:
             <input type='text' name="name" value={form.name} onChange={handleChange}></input>
         </label>
@@ -71,15 +77,17 @@ const Form = (props) => {
 
             <label>Ubication:
                     <select className="select" name="ubication" onChange={handleSelect} value={form.id}>
-                        <option>Ubication</option>
+                        <option>Countries</option>
                         {
                         countries?.map(e => (
                             <option key={e.name} value={e.name}>{e.name}</option>
                       ))}
                     </ select>
             </label>
-            
+            <div className={style.btn}>
             <button type="submit" >Add Activity</button>
+            </div>
+            </div>
         </form>
         
     )

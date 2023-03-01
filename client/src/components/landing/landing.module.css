@@ -1,0 +1,38 @@
+.landing {
+    background-image: url("https://w0.peakpx.com/wallpaper/860/168/HD-wallpaper-world-map-typography-names-of-countries-political-map-of-the-world.jpg");
+    height: 100vh;
+	background-color: black;
+    background-size:80%;
+	background-position: center;  
+	background-repeat: no-repeat;  
+    
+    
+}
+
+.btn_landing {
+	margin-top: 20px;
+    background-color: white;
+	width: 28%;
+	height: 38px;
+    outline: 2px solid #f7f5f3;
+	color: black;
+	font-size: 20px;
+	font-weight: 500;
+	border: none;
+	cursor: pointer;
+	border-radius: 5px;
+	position:fixed;
+	overflow: hidden;
+	font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;;
+    
+}
+
+.btn_landing:hover {
+    background-color: black;
+    color: white;
+    
+}
+
+.link_landing {
+    text-decoration: none;
+}
