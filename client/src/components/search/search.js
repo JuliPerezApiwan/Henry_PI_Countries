@@ -1,34 +1,41 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { getCountriesName } from '../../redux/actions';
-import style from '../search/search.module.css'
-
-
+import { getCountriesName, getAllCountries, getAllActivities } from '../../redux/actions';
+import style from '../search/search.module.css';
 
 export default function SearchBar() {
-    const dispatch = useDispatch();
-    const [name, setName] = useState('');
+  const dispatch = useDispatch();
+  const [name, setName] = useState('');
 
-    function handleInputChange(e){
-        e.preventDefault();
-        setName(e.target.value);
-       
-    }
+  function handleInputChange(e) {
+    e.preventDefault();
+    setName(e.target.value);
+  }
 
-    function handleSubmit(e){
-        e.preventDefault();
-        dispatch(getCountriesName(name));
-        setName('');
-    }
+  function handleSubmit(e) {
+    e.preventDefault();
+    dispatch(getCountriesName(name));
+    setName(e.target.value);
+  }
 
-    return (
-      <div className={style.search}>
-           <input className="input" value={name} type="text" placeholder="Search here..."
-              onChange={handleInputChange}
-           />
-           <button type="submit" onClick={handleSubmit}>Search</button>
-      </div>
-    )
+  useEffect(() => {
+    dispatch(getAllCountries());
+  }, [dispatch]);
 
+  return (
+    <div className={style.search}>
+      <input
+        className="input"
+        value={name}
+        type="text"
+        placeholder="Search here..."
+        onChange={handleInputChange}
+      />
+
+      <button type="submit" onClick={handleSubmit}>
+        Search
+      </button>
+    </div>
+  );
 }

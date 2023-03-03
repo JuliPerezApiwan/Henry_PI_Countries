@@ -1,14 +1,21 @@
+.div {
+    background-image: url('https://p4.wallpaperbetter.com/wallpaper/766/308/889/spot-light-faded-wallpaper-preview.jpg');
+    background-size:400%;
+	background-position: center;  
+	
+}
+
 form {
 	padding:8px;
 	border-radius:10px;
     display: inline-block;
     box-shadow: 0 0 0.2rem rgb(12 12 12), 0 0 0.2rem rgb(16 15 15 / 86%), 0 0 2rem rgb(5 10 6);
     margin-top: 40px;
+    margin-bottom: 50px;
     padding-left: 10px;
     margin-left: -15px;
-    
+    background-color: rgb(126, 163, 199);   
 }
-
 
 .container input {
     background-color: #4CAF50;

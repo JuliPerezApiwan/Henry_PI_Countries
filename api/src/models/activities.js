@@ -16,27 +16,20 @@ module.exports = (sequelize) => {
     },
 
     dificult: {
-        type: DataTypes.STRING,
-        allowNull:false,
+      type: DataTypes.STRING,
+      allowNull: false,
     },
 
     duration: {
-        type: DataTypes.INTEGER,
+      type: DataTypes.INTEGER,
     },
-    
+
     station: {
-        type: DataTypes.STRING,
+      type: DataTypes.STRING,
     },
     ubication: {
       type: DataTypes.STRING,
       allowNull: false,
-    }
+    },
   });
 };
-
-/* -  ID. \*
--  Nombre. \*
--  Dificultad (número del 1 al 5). \*
--  Duración (en horas).
--  Temporada (Verano, Otoño, Invierno o Primavera). \* 
-*/
