@@ -11,7 +11,7 @@ form {
     display: inline-block;
     box-shadow: 0 0 0.2rem rgb(12 12 12), 0 0 0.2rem rgb(16 15 15 / 86%), 0 0 2rem rgb(5 10 6);
     margin-top: 40px;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
     padding-left: 10px;
     margin-left: -15px;
     background-color: rgb(126, 163, 199);   
@@ -22,12 +22,13 @@ form {
     border-radius: 4px;
     cursor:pointer;
     width:300px;
-    height: 30px;
-	padding:3px 10px;
+    height: 20px;
+	padding:4px 35px;
+    padding-right: 15px;
 	border-radius:3px;
 	background-color:#f6f6f6;
     display: flex;
-    margin: 8px;
+    margin: 20px;
 }
 
 .container label {
@@ -42,7 +43,6 @@ form {
     margin-bottom: 8px;
     background-color: black;
     border-radius: 10px;
-    border: none;
     color: white;
     padding: 10px 20px;
     text-align: center;
@@ -58,9 +58,9 @@ form {
   }
   
   .container select {
-    display: flex;
-    margin-left: 25px;
-    margin-top: 10px;
+    width: 90%;
+    height: 30px;
+    margin: 0.5rem;
   }
   
 .container h2{

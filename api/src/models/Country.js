@@ -4,12 +4,10 @@ const { DataTypes } = require('sequelize');
 module.exports = (sequelize) => {
   // defino el modelo
   sequelize.define('country', {
-    
     id: {
       type: DataTypes.STRING,
       primaryKey: true,
       allowNull: false,
-
     },
     name: {
       type: DataTypes.STRING,
@@ -25,7 +23,6 @@ module.exports = (sequelize) => {
     },
     capital: {
       type: DataTypes.STRING,
-         
     },
     subregion: {
       type: DataTypes.STRING,
@@ -39,15 +36,3 @@ module.exports = (sequelize) => {
     },
   });
 };
-
-
-
-/* -  ID (Código de tres letras). \*
--  Nombre. \*
--  Imagen de la bandera. \*
--  Continente. \*
--  Capital. \*
--  Subregión.
--  Área.
--  Población. \* */
-

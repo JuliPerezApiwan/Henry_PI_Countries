@@ -17,6 +17,8 @@ const sequelize = new Sequelize(
 country(sequelize);
 activities(sequelize);
 
+//country.belongsTo(activities, { through: 'country_activities' });
+
 module.exports = {
   sequelize,
   ...sequelize.models,

@@ -17,6 +17,12 @@ const Form = () => {
     ubication: '',
   });
 
+  const station = ['Winter', 'Spring', 'Autumn', 'Summer'];
+  const dificult = [1, 2, 3, 4, 5];
+  const duration = [
+    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24,
+  ];
+
   const handleChange = (event) => {
     const property = event.target.name;
     const value = event.target.value;
@@ -32,8 +38,21 @@ const Form = () => {
     dispatch(addActivity(form));
     alert('Actividad creada');
   };
+  const handleSelectDificult = (e) => {
+    setForm({
+      ...form,
+      dificult: e.target.value,
+    });
+  };
 
-  const handleSelect = (e) => {
+  const handleSelectDuration = (e) => {
+    setForm({
+      ...form,
+      duration: e.target.value,
+    });
+  };
+
+  const handleSelectUbication = (e) => {
     setForm({
       ...form,
       ubication: form.ubication.concat(e.target.value),
@@ -65,25 +84,27 @@ const Form = () => {
           </label>
 
           <label>
-            Dificult:
-            <input
-              type="text"
-              name="dificult"
-              value={form.dificult}
-              onChange={handleChange}
-              placeholder="1 to 5"
-            />
+            Difficult:
+            <select onChange={handleSelectDificult}>
+              <option value={form.dificult}>Select</option>
+              {dificult.map((e) => (
+                <option value={e} name="dificult">
+                  {e}
+                </option>
+              ))}
+            </select>
           </label>
 
           <label>
             Duration:
-            <input
-              type="text"
-              name="duration"
-              placeholder="Duration in hours"
-              value={form.duration}
-              onChange={handleChange}
-            ></input>
+            <select onChange={handleSelectDuration}>
+              <option value={form.duration}>Select</option>
+              {duration.map((e) => (
+                <option value={e} name="duration">
+                  {e}
+                </option>
+              ))}
+            </select>
           </label>
 
           <label>
@@ -102,7 +123,7 @@ const Form = () => {
             <select
               className="select"
               name="ubication"
-              onChange={handleSelect}
+              onChange={handleSelectUbication}
               value={form.id}
             >
               <option>Countries</option>
