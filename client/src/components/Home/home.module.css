@@ -1,0 +1,56 @@
+
+.loading {
+    height: 100vh;
+}
+
+.loaderContainer {
+    height: 80%;
+}
+
+.home {
+    background-image: url("https://media.istockphoto.com/id/172244221/es/foto/modelo-de-tierra.jpg?s=612x612&w=0&k=20&c=QaC4It20G1QNePUd94yssS23iyQ_Wag_AJuWGSbPiw8=");
+    height: 103vh;
+	background-color: white;
+    background-size:70%;
+	background-position: center;  
+	background-repeat: no-repeat;  
+    margin-top: -40px;
+    background-attachment: fixed;
+    overflow: scroll;
+    padding-top: 60px;
+}
+.cards {
+    padding: 1rem;
+    margin-top: -20px;
+    display:grid;
+    grid-template-columns: repeat(5, 1fr);
+    
+}
+
+.filters {
+    width:180px;
+    height: 30px;
+    margin: 10px 10px;
+    border: 25px;
+    border-radius: 5px;
+    padding: 5px;
+    color: white;
+    background-color: black;
+    cursor: pointer;
+    box-shadow: -1px 3px 3px 2px rgba(0,0,0,0.4);
+}
+
+.filters option:hover{
+    cursor: pointer;
+}
+
+.btn_clean {
+    height: 30px;
+    margin: 10px 10px;
+    border: 2px solid black;
+    border-radius: 5px;
+    color: black;
+    background-color: white;
+    cursor: pointer;
+    box-shadow: -1px 3px 3px 2px rgba(0,0,0,0.4);
+}

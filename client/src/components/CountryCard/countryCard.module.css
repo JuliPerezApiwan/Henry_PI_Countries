@@ -1,0 +1,36 @@
+.countryCard {
+    padding: 1rem;
+    border: black solid;
+    border-radius: 15px;
+    margin: 1rem;
+    background-color: rgba(255, 255, 255, 0.912);
+}
+
+.countryCard img {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 9999rem;
+    border: 1px black solid;
+    overflow: hidden;
+    transition: .8s;
+}
+
+.link_countryCard {
+    text-decoration: none;
+    color: black;
+   
+}
+
+.link_countryCard:hover {
+
+    color: goldenrod;
+}
+.countryCard h2, h4 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;;
+    margin: 2px;
+}
+.countryCard h2 {
+   
+    margin: 10px;
+}
+
